@@ -23,11 +23,11 @@
         .sidenav h2 { color: var(--neon-purple); text-align: center; font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 15px; }
         .sidenav a { padding: 12px 25px; text-decoration: none; font-size: 1.1rem; color: #bbb; display: block; transition: 0.3s; cursor: pointer; }
         .sidenav a:hover { color: var(--neon-blue); background: rgba(138, 43, 226, 0.1); }
-        .closebtn { position: absolute; top: 10px; right: 20px; font-size: 36px; color: #fff; cursor: pointer; }
+        .closebtn { position: absolute; top: 10px; right: 20px; font-size: 30px; color: #fff; cursor: pointer; }
 
         /* Header */
         header { background: var(--card-bg); padding: 15px; display: flex; align-items: center; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 99; }
-        .menu-btn { font-size: 30px; cursor: pointer; color: var(--neon-purple); margin-right: 20px; display: block; }
+        .menu-btn { font-size: 30px; cursor: pointer; color: var(--neon-purple); margin-right: 20px; }
 
         /* Page Control */
         .page { display: none; padding: 15px; text-align: center; min-height: 100vh; }
@@ -135,6 +135,7 @@
 
 <div id="reseller-page" class="page">
     <div class="section-header" style="background: linear-gradient(90deg, #ffa657, transparent);">RESELLER PANEL RATES</div>
+    
     <div class="panel-group-title">BR MOD (Root)</div>
     <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div></div>
     <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹250</p></div></div>
@@ -164,18 +165,36 @@
     <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹650</p></div></div>
     <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1000</p></div></div>
 
-    <div class="panel-group-title">STRICKS BR (Root)</div>
+    <div class="panel-group-title">STRICKS BR (ALPHA-X) (Root)</div>
     <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹180</p></div></div>
     <div class="product-card"><div class="product-info"><h3>5 Days</h3><p>₹220</p></div></div>
     <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹290</p></div></div>
 
     <div class="panel-group-title">PATO TEAM MOD FF (Root & Non-Root)</div>
     <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹120</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹190</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹380</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹520</p></div></div>
     <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹950</p></div></div>
 
     <div class="panel-group-title">HG CHEATS (Root & Non-Root)</div>
     <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹110</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹280</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹3100</p></div></div>
     <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹600</p></div></div>
+
+    <div class="panel-group-title">DRIP CLIENT (Non-Root)</div>
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹150</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹250</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹450</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹700</p></div></div>
+
+    <div class="panel-group-title">PRIME HOOK (Non-Root)</div>
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹140</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹275</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹380</p></div></div>
 </div>
 
 <script>
@@ -184,8 +203,11 @@ function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
 
 function showPage(pageId) {
     closeNav();
+    // Sabhi pages ko hide karo
     document.getElementById('store-page').style.display = 'none';
     document.getElementById('reseller-page').style.display = 'none';
+    
+    // Sirf selected page ko show karo
     document.getElementById(pageId + '-page').style.display = 'block';
     
     if(pageId === 'reseller') {
