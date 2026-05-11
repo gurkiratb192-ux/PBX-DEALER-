@@ -14,7 +14,7 @@
         }
         body { font-family: 'Segoe UI', sans-serif; background-color: var(--primary-bg); color: var(--text-white); margin: 0; padding: 0; overflow-x: hidden; }
 
-        /* Sidebar Navigation */
+        /* Sidebar Navigation - SIRF 1 OPTION */
         .sidenav {
             height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0;
             background-color: #0f0f12; overflow-x: hidden; transition: 0.4s; padding-top: 60px;
@@ -33,7 +33,7 @@
         .page { display: none; padding: 15px; text-align: center; }
         .active-page { display: block !important; }
 
-        /* General UI */
+        /* UI Elements */
         .section-header { background: linear-gradient(90deg, var(--neon-purple), transparent); padding: 10px; border-radius: 8px; margin: 25px 0 10px; font-weight: bold; text-align: left; border-left: 4px solid white; text-transform: uppercase; }
         .panel-group-title { color: #ffa657; font-size: 1.1rem; margin: 15px 0 10px 5px; text-align: left; font-weight: bold; border-bottom: 1px solid #333; }
         .product-card { background: var(--card-bg); border: 1px solid #222; border-radius: 12px; padding: 12px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
@@ -43,7 +43,6 @@
         .note-box { background: rgba(255, 65, 54, 0.1); border: 1px solid #ff4136; padding: 12px; border-radius: 10px; margin: 15px 0; text-align: left; font-size: 0.9rem; color: #ff7b72; }
 
         /* Deposit/Scanner UI */
-        .stat-box { background: var(--card-bg); padding: 15px; border-radius: 10px; border: 1px solid #333; flex: 1; }
         #payment-ui { display: none; background: #fff; color: #000; padding: 20px; border-radius: 15px; text-align: center; margin-top: 20px; }
         #payment-ui img { width: 100%; max-width: 250px; border-radius: 10px; }
         .timer { font-size: 2.2rem; font-weight: bold; color: #ff4136; margin: 10px 0; }
@@ -54,7 +53,6 @@
 <div id="mySidenav" class="sidenav">
     <span class="closebtn" onclick="closeNav()">&times;</span>
     <h2>PBX PANEL</h2>
-    <a onclick="showPage('store')">🏠 Dashboard</a>
     <a onclick="showPage('reseller')">🤝 Panel Reseller</a>
 </div>
 
@@ -67,7 +65,7 @@
     <div class="section-header">ROOT PANELS PRICE</div>
     <div class="note-box"><b>IMPORTANT:</b> Root panel me main id full safe rahega.</div>
 
-    <div class="panel-group-title">BRO MOD (Root)</div>
+    <div class="panel-group-title">BR MOD (Root)</div>
     <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
     <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹350</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
     <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹600</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
@@ -75,15 +73,44 @@
     <div class="product-card"><div class="product-info"><h3>1 Day PC</h3><p>₹100</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
     <div class="product-card"><div class="product-info"><h3>10 Days PC</h3><p>₹500</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
 
-    <div class="panel-group-title">HAXX-CKER PRO (Root)</div>
+    <div class="panel-group-title">HAXX-CKER PRO FF (Root)</div>
     <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹600</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
     <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹1100</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
     <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹1550</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
 
     <div class="panel-group-title">iPhone PANEL</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹450</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹1350</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
-    <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹2250</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>1 Day iPhone</h3><p>₹450</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days iPhone</h3><p>₹1350</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>30 Days iPhone</h3><p>₹2250</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>Esign Certificate</h3><p>₹550</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+
+    <div class="panel-group-title">DRIP CLIENT (Root)</div>
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹110</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹360</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹950</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+
+    <div class="panel-group-title">VOLUME STREAMER (Root)</div>
+    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹430</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹800</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1150</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+
+    <div class="panel-group-title">STRICKS BR (ALPHA-X) (Root)</div>
+    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹240</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>5 Days</h3><p>₹300</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹350</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+
+    <div class="panel-group-title">PATO TEAM MOD FF (Root)</div>
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹150</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹220</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹500</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹630</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1100</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+
+    <div class="panel-group-title">HG CHEATS (Root)</div>
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹130</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹330</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹400</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹800</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
 
     <div class="section-header" style="background: linear-gradient(90deg, #238636, transparent);">NON-ROOT PANELS PRICE</div>
     <div class="note-box"><b>IMPORTANT:</b> Noon root me second id se khelna padega, id blacklist hota hai.</div>
@@ -91,39 +118,65 @@
     <div class="panel-group-title">DRIP CLIENT (Non-Root)</div>
     <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
     <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹900</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+
+    <div class="note-box" style="border-color: #58a6ff; color: #58a6ff; background: rgba(88, 166, 255, 0.1);">
+        <b>IMPORTANT:</b> Jisko bhi phone root karwana hoga voh message kar sakta hai niche whatsapp link diya hai.
+    </div>
 </div>
 
 <div id="reseller-page" class="page">
     <div class="section-header" style="background: linear-gradient(90deg, #ffa657, transparent);">RESELLER PANEL RATES</div>
     
-    <div class="panel-group-title">BRO MOD (Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹250</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
-    <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹450</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
-    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹600</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
-    <div class="product-card"><div class="product-info"><h3>1 Day PC</h3><p>₹70</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
-    <div class="product-card"><div class="product-info"><h3>10 Days PC</h3><p>₹350</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="panel-group-title">BR MOD (Root)</div>
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹250</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹450</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹600</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>1 Day PC</h3><p>₹70</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>10 Days PC</h3><p>₹350</p></div></div>
 
-    <div class="panel-group-title">HAXX-CKER PRO (Root)</div>
-    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹450</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
-    <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹900</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
-    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹1350</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="panel-group-title">HAXX-CKER PRO FF (Root)</div>
+    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹450</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹900</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹1350</p></div></div>
 
     <div class="panel-group-title">iPhone PANEL</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹370</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹1200</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
-    <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹2050</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
-    
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹370</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹1200</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹2050</p></div></div>
+
+    <div class="panel-group-title">DRIP CLIENT (Root)</div>
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹80</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹280</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹750</p></div></div>
+
+    <div class="panel-group-title">VOLUME STREAMER (Root)</div>
+    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹370</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹650</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1000</p></div></div>
+
+    <div class="panel-group-title">STRICKS BR (Root)</div>
+    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹180</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹290</p></div></div>
+
+    <div class="panel-group-title">PATO TEAM MOD FF (Root & Non-Root)</div>
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹120</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹950</p></div></div>
+
+    <div class="panel-group-title">HG CHEATS (Root & Non-Root)</div>
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹110</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹600</p></div></div>
+
     <div class="panel-group-title">DRIP CLIENT (Non-Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
-    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹700</p></div><button class="buy-btn" onclick="showPage('deposit')">BUY</button></div>
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹700</p></div></div>
+
+    <div class="panel-group-title">PRIME HOOK (Non-Root)</div>
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div></div>
+    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹380</p></div></div>
 </div>
 
 <div id="deposit-page" class="page">
-    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-        <div class="stat-box"><h4>Current Balance</h4><p id="curr-bal">₹0.00</p></div>
-        <div class="stat-box"><h4>Today Deposit</h4><p id="today-dep">₹0.00</p></div>
-    </div>
     <div id="form-container" class="deposit-form">
         <input type="number" id="dep-amount" class="input-rect" placeholder="Enter Amount">
         <button class="buy-btn" style="width: 100%; margin-top: 15px;" onclick="startPayment()">Add Money Now</button>
