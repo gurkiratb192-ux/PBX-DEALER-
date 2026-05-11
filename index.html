@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PBX PANEL | Dashboard</title>
+    <title>PBX PANEL | Premium Store</title>
     <style>
         :root {
             --primary-bg: #0a0a0c;
@@ -13,111 +13,32 @@
             --text-white: #ffffff;
         }
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-white);
-            margin: 0;
-            overflow-x: hidden;
-        }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--primary-bg); color: var(--text-white); margin: 0; padding: 0; overflow-x: hidden; }
 
-        /* Navbar Style */
-        header {
-            background: var(--card-bg);
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #222;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .menu-btn {
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--neon-purple);
-            margin-right: 20px;
-        }
-
-        /* Sidebar Navigation Interface */
+        /* Sidebar Navigation */
         .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            background-color: #0f0f12;
-            overflow-x: hidden;
-            transition: 0.4s;
-            padding-top: 20px;
+            height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0;
+            background-color: #0f0f12; overflow-x: hidden; transition: 0.4s; padding-top: 20px;
             border-right: 1px solid var(--neon-purple);
         }
+        .sidenav h2 { color: var(--neon-purple); text-align: center; font-size: 1.5rem; margin-bottom: 30px; border-bottom: 1px solid #222; padding-bottom: 15px; }
+        .sidenav a { padding: 12px 25px; text-decoration: none; font-size: 1.1rem; color: #bbb; display: block; transition: 0.3s; }
+        .sidenav a:hover { color: var(--neon-blue); background: rgba(138, 43, 226, 0.1); }
+        .section-heading { padding: 20px 25px 5px; font-size: 0.85rem; color: #555; text-transform: uppercase; font-weight: bold; }
+        .closebtn { position: absolute; top: 10px; right: 20px; font-size: 30px; color: #fff; cursor: pointer; }
 
-        .sidenav h2 {
-            color: var(--neon-purple);
-            text-align: center;
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #222;
-            padding-bottom: 15px;
-        }
+        /* Header & Main UI */
+        header { background: var(--card-bg); padding: 15px; display: flex; align-items: center; border-bottom: 1px solid #222; sticky: top; }
+        .menu-btn { font-size: 24px; cursor: pointer; color: var(--neon-purple); margin-right: 20px; }
+        .container { padding: 15px; text-align: center; }
 
-        .sidenav a {
-            padding: 12px 25px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            color: #bbb;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: var(--neon-blue);
-            background: rgba(138, 43, 226, 0.1);
-        }
-
-        .section-heading {
-            padding: 20px 25px 5px;
-            font-size: 0.85rem;
-            color: #555;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: bold;
-        }
-
-        .closebtn {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 30px;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        /* Content Area */
-        .container { padding: 20px; text-align: center; }
-
-        .product-card {
-            background: var(--card-bg);
-            border: 1px solid #222;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .buy-btn {
-            background: linear-gradient(to right, #4a00e0, #8e2de2);
-            color: white;
-            text-decoration: none;
-            padding: 8px 18px;
-            border-radius: 6px;
-            font-weight: bold;
-        }
+        .section-header { background: linear-gradient(90deg, var(--neon-purple), transparent); padding: 10px; border-radius: 8px; margin: 25px 0 10px; font-weight: bold; text-align: left; border-left: 4px solid white; text-transform: uppercase; }
+        .panel-group-title { color: #ffa657; font-size: 1.1rem; margin: 15px 0 10px 5px; text-align: left; font-weight: bold; border-bottom: 1px solid #333; }
+        .product-card { background: var(--card-bg); border: 1px solid #222; border-radius: 12px; padding: 12px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .product-info h3 { margin: 0; font-size: 0.8rem; color: #bbb; text-align: left; }
+        .product-info p { margin: 3px 0 0; font-size: 1.1rem; color: var(--neon-blue); font-weight: bold; }
+        .buy-btn { background: linear-gradient(to right, #4a00e0, #8e2de2); color: white; text-decoration: none; padding: 8px 18px; border-radius: 6px; font-weight: bold; font-size: 0.85rem; }
+        .note-box { background: rgba(255, 65, 54, 0.1); border: 1px solid #ff4136; padding: 12px; border-radius: 10px; margin: 15px 0; text-align: left; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -125,42 +46,59 @@
 <div id="mySidenav" class="sidenav">
     <span class="closebtn" onclick="closeNav()">&times;</span>
     <h2>PBX PANEL</h2>
-    
-    <a href="#dashboard" onclick="closeNav()">🏠 Dashboard</a>
-    <a href="#deposit" onclick="closeNav()">💰 Deposit</a>
-    <a href="#buy-key" onclick="closeNav()">🔑 Buy Key</a>
-    <a href="#my-key" onclick="closeNav()">📂 My Key</a>
-    <a href="#all-history" onclick="closeNav()">📜 All History</a>
-
+    <a href="#">🏠 Dashboard</a>
+    <a href="#">💰 Deposit</a>
+    <a href="#">🔑 Buy Key</a>
+    <a href="#">📂 My Key</a>
+    <a href="#">📜 All History</a>
     <div class="section-heading">Account Setting</div>
-    <a href="#profile" onclick="closeNav()">👤 My Profile</a>
-    <a href="#logout" onclick="closeNav()" style="color: #ff4136;">🚪 Logout</a>
+    <a href="#">👤 My Profile</a>
+    <a href="#" style="color: #ff4136;">🚪 Logout</a>
 </div>
 
 <header>
     <div class="menu-btn" onclick="openNav()">☰</div>
-    <div style="font-weight: bold; font-size: 1.2rem;">PBX PANEL STORE</div>
+    <div style="font-weight: bold; font-size: 1.2rem; color: var(--neon-purple);">PBX PANEL STORE</div>
 </header>
 
 <div class="container">
-    <h3 style="color: var(--neon-blue);">Welcome to Dashboard</h3>
-    <p style="font-size: 0.9rem; color: #888;">Niche se koi bhi panel buy karein</p>
 
-    <div class="product-card">
-        <div class="product-info"><h3>BRO MOD (Root)</h3><p>₹100</p></div>
-        <a href="https://wa.me/918557916807" class="buy-btn">BUY</a>
+    <div class="section-header">ROOT PANELS</div>
+    <div class="note-box"><b>IMPORTANT:</b> Root panel me main id full safe rahega.</div>
+
+    <div class="panel-group-title">BRO MOD (Root)</div>
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹850</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+
+    <div class="panel-group-title">HAXX-CKER PRO FF (Root)</div>
+    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹1550</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+
+    <div class="panel-group-title">iPhone PANEL</div>
+    <div class="product-card"><div class="product-info"><h3>30 Days iPhone</h3><p>₹2250</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+
+    <div class="section-header" style="background: linear-gradient(90deg, #238636, transparent);">NON-ROOT PANELS</div>
+    <div class="note-box" style="border-color:#ff7b72; color:#ff7b72;"><b>IMPORTANT:</b> Noon root me second id use karein, id blacklist risk hota hai.</div>
+
+    <div class="panel-group-title">DRIP CLIENT (Non-Root)</div>
+    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹900</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+
+    <div class="panel-group-title">PATO TEAM (Non-Root)</div>
+    <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+
+    <div class="note-box" style="border-color: #58a6ff; color: #58a6ff; background: rgba(88, 166, 255, 0.1);">
+        <b>IMPORTANT:</b> Jisko bhi phone root karwana hoga voh message kar sakta hai niche whatsapp link diya hai.
     </div>
-    
+
+    <div style="text-align: center; padding: 20px;">
+        <a href="https://wa.me/918557916807" class="buy-btn" style="padding: 15px 40px; background: #25d366;">CHAT ON WHATSAPP</a>
     </div>
+
+</div>
 
 <script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "280px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
+function openNav() { document.getElementById("mySidenav").style.width = "280px"; }
+function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
 </script>
 
 </body>
