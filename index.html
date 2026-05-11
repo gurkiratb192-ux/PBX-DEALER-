@@ -23,14 +23,15 @@
         .sidenav h2 { color: var(--neon-purple); text-align: center; font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 15px; }
         .sidenav a { padding: 12px 25px; text-decoration: none; font-size: 1.1rem; color: #bbb; display: block; transition: 0.3s; cursor: pointer; }
         .sidenav a:hover { color: var(--neon-blue); background: rgba(138, 43, 226, 0.1); }
-        .closebtn { position: absolute; top: 10px; right: 20px; font-size: 30px; color: #fff; cursor: pointer; }
+        .closebtn { position: absolute; top: 10px; right: 20px; font-size: 36px; color: #fff; cursor: pointer; }
 
         /* Header */
         header { background: var(--card-bg); padding: 15px; display: flex; align-items: center; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 99; }
         .menu-btn { font-size: 30px; cursor: pointer; color: var(--neon-purple); margin-right: 20px; }
 
-        /* Page Control */
-        .page { display: none; padding: 15px; text-align: center; min-height: 100vh; }
+        /* Page System - Fix for Mixing */
+        .page-container { position: relative; width: 100%; }
+        .page { display: none; padding: 15px; text-align: center; width: 100%; box-sizing: border-box; }
         .active-page { display: block !important; }
 
         /* UI Elements */
@@ -57,144 +58,141 @@
     <div id="nav-title" style="font-weight: bold; font-size: 1.2rem; color: var(--neon-purple);">PBX PANEL STORE</div>
 </header>
 
-<div id="store-page" class="page active-page">
-    <div class="section-header">ROOT PANELS PRICE</div>
-    <div class="note-box"><b>IMPORTANT:</b> Root panel me main id full safe rahega.</div>
+<div class="page-container">
 
-    <div class="panel-group-title">BR MOD (Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹350</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹600</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹850</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>1 Day PC</h3><p>₹100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>10 Days PC</h3><p>₹500</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+    <div id="store-page" class="page active-page">
+        <div class="section-header">ROOT PANELS PRICE</div>
+        <div class="note-box"><b>IMPORTANT:</b> Root panel me main id full safe rahega.</div>
 
-    <div class="panel-group-title">HAXX-CKER PRO FF (Root)</div>
-    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹600</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹1100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹1550</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="panel-group-title">BR MOD (Root)</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹350</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹600</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹850</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>1 Day PC</h3><p>₹100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>10 Days PC</h3><p>₹500</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
 
-    <div class="panel-group-title">iPhone PANEL</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day iPhone</h3><p>₹450</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days iPhone</h3><p>₹1350</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>30 Days iPhone</h3><p>₹2250</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>Esign Certificate</h3><p>₹550</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="panel-group-title">HAXX-CKER PRO FF (Root)</div>
+        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹600</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹1100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹1550</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
 
-    <div class="panel-group-title">DRIP CLIENT (Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹110</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹360</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹950</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="panel-group-title">iPhone PANEL</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day iPhone</h3><p>₹450</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days iPhone</h3><p>₹1350</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>30 Days iPhone</h3><p>₹2250</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>Esign Certificate</h3><p>₹550</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
 
-    <div class="panel-group-title">VOLUME STREAMER (Root)</div>
-    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹430</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹800</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1150</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="panel-group-title">DRIP CLIENT (Root)</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹110</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹360</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹950</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
 
-    <div class="panel-group-title">STRICKS BR (Root)</div>
-    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹240</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>5 Days</h3><p>₹300</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹350</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="panel-group-title">VOLUME STREAMER (Root)</div>
+        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹430</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹800</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1150</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
 
-    <div class="panel-group-title">PATO TEAM MOD FF (Root & Non-Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹150</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹220</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹500</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹630</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="panel-group-title">STRICKS BR (ALPHA-X) (Root)</div>
+        <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹240</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>5 Days</h3><p>₹300</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹350</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
 
-    <div class="panel-group-title">HG CHEATS (Root & Non-Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹130</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹330</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹400</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹800</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="panel-group-title">PATO TEAM MOD FF (Root & Non-Root)</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹150</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹220</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹500</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹630</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
 
-    <div class="section-header" style="background: linear-gradient(90deg, #238636, transparent);">NON-ROOT PANELS PRICE</div>
-    <div class="note-box"><b>IMPORTANT:</b> Noon root me second id se khelna padega, id blacklist hota hota 2-3 days ke liye.</div>
+        <div class="panel-group-title">HG CHEATS (Root & Non-Root)</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹130</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹330</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹400</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹800</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
 
-    <div class="panel-group-title">DRIP CLIENT (Non-Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹200</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹350</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹600</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹900</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="section-header" style="background: linear-gradient(90deg, #238636, transparent);">NON-ROOT PANELS PRICE</div>
+        <div class="note-box"><b>IMPORTANT:</b> Noon root me second id se khelna padega, id blacklist hota hota 2-3 days ke liye.</div>
 
-    <div class="panel-group-title">PRIME HOOK (Non-Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹85</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹170</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹315</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹455</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="panel-group-title">DRIP CLIENT (Non-Root)</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹200</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹350</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹600</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹900</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
 
-    <div class="note-box" style="border-color: #58a6ff; color: #58a6ff; background: rgba(88, 166, 255, 0.1);">
-        <b>IMPORTANT:</b> Jisko bhi phone root karwana hoga voh message kar sakta hai niche whatsapp link diya hai.
+        <div class="note-box" style="border-color: #58a6ff; color: #58a6ff; background: rgba(88, 166, 255, 0.1);">
+            <b>IMPORTANT:</b> Jisko bhi phone root karwana hoga voh message kar sakta hai niche whatsapp link diya hai.
+        </div>
+
+        <div style="text-align: center; padding: 20px;">
+            <a href="https://wa.me/918557916807" class="buy-btn" style="padding: 15px 40px; background: #25d366; text-decoration: none;">CHAT ON WHATSAPP</a>
+        </div>
     </div>
 
-    <div style="text-align: center; padding: 20px;">
-        <a href="https://wa.me/918557916807" class="buy-btn" style="padding: 15px 40px; background: #25d366; text-decoration: none;">CHAT ON WHATSAPP</a>
+    <div id="reseller-page" class="page">
+        <div class="section-header" style="background: linear-gradient(90deg, #ffa657, transparent);">RESELLER PANEL RATES</div>
+        
+        <div class="panel-group-title">BR MOD (Root)</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹250</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹450</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹600</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>1 Day PC</h3><p>₹70</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>10 Days PC</h3><p>₹350</p></div></div>
+
+        <div class="panel-group-title">HAXX-CKER PRO FF (Root)</div>
+        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹450</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹900</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹1350</p></div></div>
+
+        <div class="panel-group-title">iPhone PANEL</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day iPhone</h3><p>₹370</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days iPhone</h3><p>₹1200</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>30 Days iPhone</h3><p>₹2050</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>Esign Certificate</h3><p>₹450</p></div></div>
+
+        <div class="panel-group-title">DRIP CLIENT (Root)</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹80</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹280</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹750</p></div></div>
+
+        <div class="panel-group-title">VOLUME STREAMER (Root)</div>
+        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹370</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹650</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1000</p></div></div>
+
+        <div class="panel-group-title">STRICKS BR (Root)</div>
+        <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹180</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>5 Days</h3><p>₹220</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹290</p></div></div>
+
+        <div class="panel-group-title">PATO TEAM MOD FF (Root & Non-Root)</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹120</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹190</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹380</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹520</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹950</p></div></div>
+
+        <div class="panel-group-title">HG CHEATS (Root & Non-Root)</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹110</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹280</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹3100</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹600</p></div></div>
+
+        <div class="panel-group-title">DRIP CLIENT (Non-Root)</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹150</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹250</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹450</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹700</p></div></div>
+
+        <div class="panel-group-title">PRIME HOOK (Non-Root)</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹140</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹275</p></div></div>
+        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹380</p></div></div>
     </div>
-</div>
-
-<div id="reseller-page" class="page">
-    <div class="section-header" style="background: linear-gradient(90deg, #ffa657, transparent);">RESELLER PANEL RATES</div>
-    
-    <div class="panel-group-title">BR MOD (Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹250</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹450</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹600</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>1 Day PC</h3><p>₹70</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>10 Days PC</h3><p>₹350</p></div></div>
-
-    <div class="panel-group-title">HAXX-CKER PRO FF (Root)</div>
-    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹450</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹900</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹1350</p></div></div>
-
-    <div class="panel-group-title">iPhone PANEL</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day iPhone</h3><p>₹370</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days iPhone</h3><p>₹1200</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>30 Days iPhone</h3><p>₹2050</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>Esign Certificate</h3><p>₹450</p></div></div>
-
-    <div class="panel-group-title">DRIP CLIENT (Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹80</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹280</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹750</p></div></div>
-
-    <div class="panel-group-title">VOLUME STREAMER (Root)</div>
-    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹370</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹650</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1000</p></div></div>
-
-    <div class="panel-group-title">STRICKS BR (ALPHA-X) (Root)</div>
-    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹180</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>5 Days</h3><p>₹220</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹290</p></div></div>
-
-    <div class="panel-group-title">PATO TEAM MOD FF (Root & Non-Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹120</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹190</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹380</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹520</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹950</p></div></div>
-
-    <div class="panel-group-title">HG CHEATS (Root & Non-Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹110</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹280</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹3100</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹600</p></div></div>
-
-    <div class="panel-group-title">DRIP CLIENT (Non-Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹150</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹250</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹450</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹700</p></div></div>
-
-    <div class="panel-group-title">PRIME HOOK (Non-Root)</div>
-    <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹70</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹140</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹275</p></div></div>
-    <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹380</p></div></div>
 </div>
 
 <script>
@@ -203,18 +201,25 @@ function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
 
 function showPage(pageId) {
     closeNav();
-    // Sabhi pages ko hide karo
-    document.getElementById('store-page').style.display = 'none';
-    document.getElementById('reseller-page').style.display = 'none';
+    // Saare pages ko hide karo
+    const pages = document.getElementsByClassName('page');
+    for (let i = 0; i < pages.length; i++) {
+        pages[i].style.display = 'none';
+    }
     
-    // Sirf selected page ko show karo
-    document.getElementById(pageId + '-page').style.display = 'block';
+    // Sirf mangwaya gaya page dikhao
+    const targetPage = document.getElementById(pageId + '-page');
+    if (targetPage) {
+        targetPage.style.display = 'block';
+    }
     
     if(pageId === 'reseller') {
         document.getElementById('nav-title').innerText = "PANEL RESELLER";
     } else {
         document.getElementById('nav-title').innerText = "PBX PANEL STORE";
     }
+    // Scroll to top
+    window.scrollTo(0, 0);
 }
 </script>
 </body>
