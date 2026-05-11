@@ -1,212 +1,171 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PBX PANEL | Premium Store</title>
+    <title>PBX PANEL | Full Price List</title>
     <style>
-        :root {
-            --primary-bg: #0a0a0c;
-            --card-bg: #141417;
-            --neon-purple: #8a2be2;
-            --neon-blue: #00d2ff;
-            --neon-pink: #ff007f;
-            --text-white: #ffffff;
-        }
+        body { font-family: 'Arial', sans-serif; background-color: #0d1117; color: white; margin: 0; text-align: center; }
+        header { padding: 30px; background: linear-gradient(45deg, #1f4037, #238636); }
+        h1 { margin: 0; font-size: 28pt; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .container { padding: 15px; }
+        
+        .section-title { background: #21262d; padding: 12px; margin: 25px 0 15px 0; border-radius: 8px; font-size: 1.4rem; font-weight: bold; }
+        .root-header { color: #ff7b72; border-left: 5px solid #ff7b72; }
+        .non-root-header { color: #7ee787; border-left: 5px solid #7ee787; }
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-white);
-            margin: 0;
-            padding: 10px;
-        }
-
-        /* Top Header */
-        header {
-            background: var(--card-bg);
+        .important-note {
+            background: rgba(255, 65, 54, 0.1);
+            border: 1px solid #ff4136;
+            color: #ff7b72;
             padding: 15px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 1px solid #222;
-            margin-bottom: 15px;
-        }
-
-        .balance-box {
-            background: #1a1a20;
-            padding: 10px 20px;
+            margin: 15px 0;
             border-radius: 10px;
-            border: 1px solid var(--neon-purple);
-            font-weight: bold;
-        }
-
-        /* Banner Image Section */
-        .banner-card {
-            width: 100%;
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 15px;
-            border: 2px solid #333;
-        }
-
-        .banner-card img {
-            width: 100%;
-            display: block;
-        }
-
-        .banner-overlay {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-shadow: 0 0 10px #ff0000;
-        }
-
-        /* Action Buttons */
-        .action-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .btn-small {
-            flex: 1;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid;
-            font-size: 0.8rem;
-            font-weight: bold;
-            background: transparent;
-            color: white;
-            text-align: center;
-        }
-
-        /* Product Cards */
-        .product-card {
-            background: var(--card-bg);
-            border: 1px solid #222;
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-
-        .product-info h3 {
-            margin: 0;
-            font-size: 0.9rem;
-            color: var(--neon-purple);
-            text-transform: uppercase;
-        }
-
-        .product-info p {
-            margin: 5px 0 0;
-            font-size: 1.3rem;
-            color: var(--neon-blue);
-            font-weight: bold;
-        }
-
-        .buy-controls {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .qty-input {
-            width: 40px;
-            background: #1a1a20;
-            border: 1px solid #333;
-            color: white;
-            padding: 8px;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .btn-buy {
-            background: linear-gradient(to right, #4a00e0, #8e2de2);
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        /* Important Notes Section */
-        .note-box {
-            background: rgba(255, 0, 127, 0.1);
-            border: 1px solid var(--neon-pink);
-            padding: 15px;
-            border-radius: 12px;
-            margin: 20px 0;
             text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.5;
         }
+        .important-tag { background: #ff4136; color: white; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9rem; margin-right: 10px; }
 
-        .note-box b { color: var(--neon-pink); }
+        .panel-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; margin-bottom: 20px; padding: 15px; text-align: left; }
+        .panel-name { font-size: 1.2rem; color: #ffa657; font-weight: bold; border-bottom: 1px solid #30363d; padding-bottom: 5px; margin-bottom: 10px; }
+        
+        .price-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed #21262d; }
+        .price-val { color: #7ee787; font-weight: bold; }
 
+        .btn-buy { display: block; background: #25d366; color: white; padding: 18px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 30px auto; max-width: 320px; text-align: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); font-size: 1.1rem; }
+        footer { padding: 20px; color: #8b949e; font-size: 0.8rem; border-top: 1px solid #30363d; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div style="font-size: 1.2rem;">☰</div>
-        <div class="balance-box">WALLET: ₹95.00</div>
-    </header>
+<header>
+    <h1>PBX PANEL STORE</h1>
+    <p>Premium Free Fire Tools - Root & Non-Root</p>
+</header>
 
-    <div class="banner-card">
-        <img src="https://via.placeholder.com/600x300/111/fff?text=BR+MOD+FF+!!" alt="Banner">
-        <div class="banner-overlay">♨️ BR MOD FF ‼️</div>
+<div class="container">
+
+    <div class="section-title root-header">ROOT PANELS PRICE</div>
+
+    <div class="important-note">
+        <span class="important-tag">IMPORTANT</span> Root panel me main id full safe rahega.
     </div>
 
-    <div class="action-row">
-        <div class="btn-small" style="border-color: var(--neon-blue);">CHECK UPDATE</div>
-        <div class="btn-small" style="border-color: var(--neon-pink);">CHECK FEEDBACK</div>
+    <div class="panel-card">
+        <div class="panel-name">BRO MOD (Root)</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹100</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹350</span></div>
+        <div class="price-row"><span>15 Days</span><span class="price-val">₹600</span></div>
+        <div class="price-row"><span>31 Days</span><span class="price-val">₹850</span></div>
+        <div class="price-row"><span>1 Day PC</span><span class="price-val">₹100</span></div>
+        <div class="price-row"><span>10 Days PC</span><span class="price-val">₹500</span></div>
     </div>
 
-    <div style="background: var(--neon-purple); padding: 12px; border-radius: 10px; margin-bottom: 15px; font-weight: bold;">
-        🛒 VIEW PRICING
+    <div class="panel-card">
+        <div class="panel-name">HAXX-CKER PRO FF (Root)</div>
+        <div class="price-row"><span>10 Days</span><span class="price-val">₹600</span></div>
+        <div class="price-row"><span>20 Days</span><span class="price-val">₹1100</span></div>
+        <div class="price-row"><span>31 Days</span><span class="price-val">₹1550</span></div>
     </div>
 
-    <div class="product-card">
-        <div class="product-info">
-            <h3>1 DAYS ROOT</h3>
-            <p>₹100.00</p>
-        </div>
-        <div class="buy-controls">
-            <input type="number" class="qty-input" value="1">
-            <a href="https://wa.me/918557916807" class="btn-buy">BUY</a>
-        </div>
+    <div class="panel-card">
+        <div class="panel-name">iPhone PANEL</div>
+        <div class="price-row"><span>1 Day iPhone</span><span class="price-val">₹450</span></div>
+        <div class="price-row"><span>7 Days iPhone</span><span class="price-val">₹1350</span></div>
+        <div class="price-row"><span>30 Days iPhone</span><span class="price-val">₹2250</span></div>
+        <div class="price-row"><span>Esign Certificate</span><span class="price-val">₹550</span></div>
     </div>
 
-    <div class="product-card">
-        <div class="product-info">
-            <h3>31 DAYS ROOT</h3>
-            <p>₹850.00</p>
-        </div>
-        <div class="buy-controls">
-            <input type="number" class="qty-input" value="1">
-            <a href="https://wa.me/918557916807" class="btn-buy">BUY</a>
-        </div>
+    <div class="panel-card">
+        <div class="panel-name">DRIP CLIENT (Root)</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹110</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹360</span></div>
+        <div class="price-row"><span>31 Days</span><span class="price-val">₹950</span></div>
     </div>
 
-    <div class="note-box">
-        <p><b>[IMPORTANT]</b> Root panel me main id full safe rahega.</p>
-        <p><b>[IMPORTANT]</b> Non-root me second id use karein, blacklist risk hota hai.</p>
-        <p><b>[IMPORTANT]</b> Phone root karwane ke liye WhatsApp par message karein.</p>
+    <div class="panel-card">
+        <div class="panel-name">VOLUME STREAMER (Root)</div>
+        <div class="price-row"><span>10 Days</span><span class="price-val">₹430</span></div>
+        <div class="price-row"><span>20 Days</span><span class="price-val">₹800</span></div>
+        <div class="price-row"><span>30 Days</span><span class="price-val">₹1150</span></div>
     </div>
 
-    <footer style="color: #444; font-size: 0.8rem; margin-top: 20px;">
-        © 2026 PBX PANEL STORE
-    </footer>
+    <div class="panel-card">
+        <div class="panel-name">STRICKS BR (ALPHA-X) (Root)</div>
+        <div class="price-row"><span>3 Days</span><span class="price-val">₹240</span></div>
+        <div class="price-row"><span>5 Days</span><span class="price-val">₹300</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹350</span></div>
+    </div>
+
+    <div class="panel-card">
+        <div class="panel-name">PATO TEAM MOD FF (Root)</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹150</span></div>
+        <div class="price-row"><span>3 Days</span><span class="price-val">₹220</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹500</span></div>
+        <div class="price-row"><span>15 Days</span><span class="price-val">₹630</span></div>
+        <div class="price-row"><span>30 Days</span><span class="price-val">₹1100</span></div>
+    </div>
+
+    <div class="panel-card">
+        <div class="panel-name">HG CHEATS (Root)</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹130</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹330</span></div>
+        <div class="price-row"><span>10 Days</span><span class="price-val">₹400</span></div>
+        <div class="price-row"><span>31 Days</span><span class="price-val">₹800</span></div>
+    </div>
+
+    <div class="section-title non-root-header">NON-ROOT PANELS PRICE</div>
+
+    <div class="important-note">
+        <span class="important-tag">IMPORTANT</span> Noon root me second id se khelna padega, noon root me id blacklist hota hai 2-3 days ke liye.
+    </div>
+
+    <div class="panel-card">
+        <div class="panel-name">DRIP CLIENT (Non-Root)</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹100</span></div>
+        <div class="price-row"><span>3 Days</span><span class="price-val">₹200</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹350</span></div>
+        <div class="price-row"><span>15 Days</span><span class="price-val">₹600</span></div>
+        <div class="price-row"><span>31 Days</span><span class="price-val">₹900</span></div>
+    </div>
+
+    <div class="panel-card">
+        <div class="panel-name">PRIME HOOK (Non-Root)</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹85</span></div>
+        <div class="price-row"><span>3 Days</span><span class="price-val">₹170</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹315</span></div>
+        <div class="price-row"><span>10 Days</span><span class="price-val">₹455</span></div>
+    </div>
+
+    <div class="panel-card">
+        <div class="panel-name">PATO TEAM MOD FF (Non-Root)</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹150</span></div>
+        <div class="price-row"><span>3 Days</span><span class="price-val">₹220</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹500</span></div>
+        <div class="price-row"><span>15 Days</span><span class="price-val">₹630</span></div>
+        <div class="price-row"><span>30 Days</span><span class="price-val">₹1100</span></div>
+    </div>
+
+    <div class="panel-card">
+        <div class="panel-name">HG CHEATS (Non-Root)</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹130</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹330</span></div>
+        <div class="price-row"><span>10 Days</span><span class="price-val">₹400</span></div>
+        <div class="price-row"><span>31 Days</span><span class="price-val">₹800</span></div>
+    </div>
+
+    <div class="important-note" style="border-color: #58a6ff; color: #58a6ff; background: rgba(88, 166, 255, 0.1);">
+        <span class="important-tag" style="background: #58a6ff;">IMPORTANT</span> Jisko bhi phone root karwana hoga voh message kar sakta hai niche whatsapp link diya hai.
+    </div>
+
+    <a href="https://wa.me/918557916807" class="btn-buy">Message TRUSTED PANEL on WhatsApp</a>
+
+</div>
+
+<footer>
+    <p>© 2026 PBX PANEL | 100% Secure & Trusted Dealer</p>
+</footer>
 
 </body>
 </html>
-  
