@@ -5,144 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PBX PANEL | Price List</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #0d1117; color: white; margin: 0; text-align: center; }
-        header { padding: 30px; background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; }
-        .container { padding: 15px; max-width: 800px; margin: auto; }
+        body { font-family: 'Arial', sans-serif; background-color: #0d1117; color: white; margin: 0; text-align: center; }
+        header { padding: 30px; background: linear-gradient(45deg, #1f4037, #238636); }
+        h1 { margin: 0; font-size: 28pt; }
+        .container { padding: 15px; }
         
-        .section-title { background: #21262d; padding: 10px; border-radius: 8px; margin-top: 30px; border-left: 5px solid #00d2ff; text-align: left; }
-        .root-header { border-left-color: #ff416c; }
-        
-        .panel-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 15px; margin: 15px 0; text-align: left; }
-        .panel-name { color: #58a6ff; font-size: 1.3rem; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #30363d; padding-bottom: 5px; }
-        
-        .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.95rem; }
-        .price-item { background: #0d1117; padding: 8px; border-radius: 5px; border: 1px solid #21262d; }
-        .price-val { color: #7ee787; font-weight: bold; float: right; }
+        .section-title { background: #21262d; padding: 10px; margin: 20px 0; border-radius: 8px; color: #58a6ff; font-size: 1.5rem; border-left: 5px solid #58a6ff; }
+        .root-border { border-left-color: #ff7b72; color: #ff7b72; }
 
-        .btn-buy { display: block; background: #25d366; color: white; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 30px auto; max-width: 300px; }
+        .panel-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; margin-bottom: 20px; padding: 15px; text-align: left; }
+        .panel-name { font-size: 1.3rem; color: #ffa657; font-weight: bold; border-bottom: 1px solid #30363d; padding-bottom: 5px; margin-bottom: 10px; }
+        
+        .price-row { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px dashed #21262d; }
+        .price-val { color: #7ee787; font-weight: bold; }
+
+        .btn-buy { display: block; background: #25d366; color: white; padding: 15px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 30px auto; max-width: 300px; text-align: center; }
         footer { padding: 20px; color: #8b949e; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>PBX PANEL OFFICIAL STORE</h1>
-    <p>Premium Quality & Trusted Prices</p>
+    <h1>PBX PANEL STORE</h1>
+    <p>Premium Root & Non-Root Pricing</p>
 </header>
 
 <div class="container">
 
-    <div class="section-title root-header"><h2>🛡️ ROOT PANELS</h2></div>
+    <div class="section-title root-border">ROOT PANELS PRICE</div>
 
     <div class="panel-card">
-        <div class="panel-name">Bro Mod (Root)</div>
-        <div class="price-grid">
-            <div class="price-item">1 Day <span class="price-val">₹100</span></div>
-            <div class="price-item">7 Days <span class="price-val">₹350</span></div>
-            <div class="price-item">15 Days <span class="price-val">₹600</span></div>
-            <div class="price-item">31 Days <span class="price-val">₹850</span></div>
-            <div class="price-item">1 Day PC <span class="price-val">₹100</span></div>
-            <div class="price-item">10 Days PC <span class="price-val">₹500</span></div>
-        </div>
+        <div class="panel-name">BRO MOD (Root)</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹100</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹350</span></div>
+        <div class="price-row"><span>15 Days</span><span class="price-val">₹600</span></div>
+        <div class="price-row"><span>31 Days</span><span class="price-val">₹850</span></div>
+        <div class="price-row"><span>1 Day (PC)</span><span class="price-val">₹100</span></div>
+        <div class="price-row"><span>10 Days (PC)</span><span class="price-val">₹500</span></div>
     </div>
 
     <div class="panel-card">
-        <div class="panel-name">HAXX-CKER PRO FF</div>
-        <div class="price-grid">
-            <div class="price-item">10 Days <span class="price-val">₹600</span></div>
-            <div class="price-item">20 Days <span class="price-val">₹1100</span></div>
-            <div class="price-item">31 Days <span class="price-val">₹1550</span></div>
-        </div>
+        <div class="panel-name">HAXX-CKER PRO FF (Root)</div>
+        <div class="price-row"><span>10 Days</span><span class="price-val">₹600</span></div>
+        <div class="price-row"><span>20 Days</span><span class="price-val">₹1100</span></div>
+        <div class="price-row"><span>31 Days</span><span class="price-val">₹1550</span></div>
     </div>
 
     <div class="panel-card">
         <div class="panel-name">iPhone Panel</div>
-        <div class="price-grid">
-            <div class="price-item">1 Day <span class="price-val">₹450</span></div>
-            <div class="price-item">7 Days <span class="price-val">₹1350</span></div>
-            <div class="price-item">30 Days <span class="price-val">₹2250</span></div>
-            <div class="price-item">Esign Cert <span class="price-val">₹550</span></div>
-        </div>
+        <div class="price-row"><span>1 Day iPhone</span><span class="price-val">₹450</span></div>
+        <div class="price-row"><span>7 Days iPhone</span><span class="price-val">₹1350</span></div>
+        <div class="price-row"><span>30 Days iPhone</span><span class="price-val">₹2250</span></div>
+        <div class="price-row"><span>Esign Certificate</span><span class="price-val">₹550</span></div>
     </div>
 
     <div class="panel-card">
-        <div class="panel-name">Drip Client (Root)</div>
-        <div class="price-grid">
-            <div class="price-item">1 Day <span class="price-val">₹110</span></div>
-            <div class="price-item">7 Days <span class="price-val">₹360</span></div>
-            <div class="price-item">31 Days <span class="price-val">₹950</span></div>
-        </div>
+        <div class="panel-name">DRIP CLIENT (Root)</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹110</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹360</span></div>
+        <div class="price-row"><span>31 Days</span><span class="price-val">₹950</span></div>
     </div>
 
     <div class="panel-card">
-        <div class="panel-name">Volume Streamer</div>
-        <div class="price-grid">
-            <div class="price-item">10 Days <span class="price-val">₹430</span></div>
-            <div class="price-item">20 Days <span class="price-val">₹800</span></div>
-            <div class="price-item">30 Days <span class="price-val">₹1150</span></div>
-        </div>
+        <div class="panel-name">VOLUME STREAMER (Root)</div>
+        <div class="price-row"><span>10 Days</span><span class="price-val">₹430</span></div>
+        <div class="price-row"><span>20 Days</span><span class="price-val">₹800</span></div>
+        <div class="price-row"><span>30 Days</span><span class="price-val">₹1150</span></div>
     </div>
 
     <div class="panel-card">
-        <div class="panel-name">Stricks BR (Alpha-X)</div>
-        <div class="price-grid">
-            <div class="price-item">3 Days <span class="price-val">₹240</span></div>
-            <div class="price-item">5 Days <span class="price-val">₹300</span></div>
-            <div class="price-item">7 Days <span class="price-val">₹350</span></div>
-        </div>
-    </div>
-
-    <div class="panel-card" style="border: 1px dashed #58a6ff;">
-        <div class="panel-name">PATO Team Mod FF (Root/No-Root)</div>
-        <div class="price-grid">
-            <div class="price-item">1 Day <span class="price-val">₹150</span></div>
-            <div class="price-item">3 Days <span class="price-val">₹220</span></div>
-            <div class="price-item">7 Days <span class="price-val">₹500</span></div>
-            <div class="price-item">15 Days <span class="price-val">₹630</span></div>
-            <div class="price-item">30 Days <span class="price-val">₹1100</span></div>
-        </div>
-    </div>
-
-    <div class="panel-card" style="border: 1px dashed #58a6ff;">
-        <div class="panel-name">HG CHEATS (Root/No-Root)</div>
-        <div class="price-grid">
-            <div class="price-item">1 Day <span class="price-val">₹130</span></div>
-            <div class="price-item">7 Days <span class="price-val">₹330</span></div>
-            <div class="price-item">10 Days <span class="price-val">₹400</span></div>
-            <div class="price-item">31 Days <span class="price-val">₹800</span></div>
-        </div>
-    </div>
-
-    <div class="section-title"><h2>📱 NON-ROOT PANELS</h2></div>
-
-    <div class="panel-card">
-        <div class="panel-name">Drip Client (No-Root)</div>
-        <div class="price-grid">
-            <div class="price-item">1 Day <span class="price-val">₹100</span></div>
-            <div class="price-item">3 Days <span class="price-val">₹200</span></div>
-            <div class="price-item">7 Days <span class="price-val">₹350</span></div>
-            <div class="price-item">15 Days <span class="price-val">₹600</span></div>
-            <div class="price-item">31 Days <span class="price-val">₹900</span></div>
-        </div>
+        <div class="panel-name">STRICKS BR (ALPHA-X) (Root)</div>
+        <div class="price-row"><span>3 Days</span><span class="price-val">₹240</span></div>
+        <div class="price-row"><span>5 Days</span><span class="price-val">₹300</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹350</span></div>
     </div>
 
     <div class="panel-card">
-        <div class="panel-name">Prime Hook</div>
-        <div class="price-grid">
-            <div class="price-item">1 Day <span class="price-val">₹85</span></div>
-            <div class="price-item">3 Days <span class="price-val">₹170</span></div>
-            <div class="price-item">7 Days <span class="price-val">₹315</span></div>
-            <div class="price-item">10 Days <span class="price-val">₹455</span></div>
-        </div>
+        <div class="panel-name">PATO TEAM MOD FF</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹150</span></div>
+        <div class="price-row"><span>3 Days</span><span class="price-val">₹220</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹500</span></div>
+        <div class="price-row"><span>15 Days</span><span class="price-val">₹630</span></div>
+        <div class="price-row"><span>30 Days</span><span class="price-val">₹1100</span></div>
     </div>
 
-    <a href="https://wa.me/918557916807" class="btn-buy">MESSAGE ON WHATSAPP TO BUY</a>
+    <div class="panel-card">
+        <div class="panel-name">HG CHEATS</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹130</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹330</span></div>
+        <div class="price-row"><span>10 Days</span><span class="price-val">₹400</span></div>
+        <div class="price-row"><span>31 Days</span><span class="price-val">₹800</span></div>
+    </div>
+
+    <div class="section-title">NON-ROOT PANELS PRICE</div>
+
+    <div class="panel-card">
+        <div class="panel-name">DRIP CLIENT (Non-Root)</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹100</span></div>
+        <div class="price-row"><span>3 Days</span><span class="price-val">₹200</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹350</span></div>
+        <div class="price-row"><span>15 Days</span><span class="price-val">₹600</span></div>
+        <div class="price-row"><span>31 Days</span><span class="price-val">₹900</span></div>
+    </div>
+
+    <div class="panel-card">
+        <div class="panel-name">PRIME HOOK (Non-Root)</div>
+        <div class="price-row"><span>1 Day</span><span class="price-val">₹85</span></div>
+        <div class="price-row"><span>3 Days</span><span class="price-val">₹170</span></div>
+        <div class="price-row"><span>7 Days</span><span class="price-val">₹315</span></div>
+        <div class="price-row"><span>10 Days</span><span class="price-val">₹455</span></div>
+    </div>
+
+    <a href="https://wa.me/918557916807" class="btn-buy">Message TRUSTED PANEL on WhatsApp</a>
 
 </div>
 
 <footer>
     <p>© 2026 PBX PANEL | Trusted Dealer</p>
-    <p>Price may change according to market.</p>
 </footer>
 
 </body>
