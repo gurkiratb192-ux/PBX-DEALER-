@@ -45,6 +45,12 @@
         .input-group label { display: block; margin-bottom: 5px; font-size: 0.9rem; color: #bbb; }
         .input-rect { width: 100%; padding: 12px; background: #0a0a0c; border: 1px solid #333; border-radius: 5px; color: white; box-sizing: border-box; }
 
+        /* Scanner Modal Section */
+        #payment-ui { display: none; margin-top: 20px; background: #fff; color: #000; padding: 20px; border-radius: 15px; text-align: center; }
+        #payment-ui img { width: 100%; max-width: 250px; border-radius: 10px; }
+        .timer { font-size: 1.5rem; font-weight: bold; color: #ff4136; margin: 10px 0; }
+        .received-msg { display: none; color: #25d366; font-size: 1.5rem; font-weight: bold; margin-top: 10px; }
+
         /* Store UI */
         .section-header { background: linear-gradient(90deg, var(--neon-purple), transparent); padding: 10px; border-radius: 8px; margin: 25px 0 10px; font-weight: bold; text-align: left; border-left: 4px solid white; text-transform: uppercase; }
         .panel-group-title { color: #ffa657; font-size: 1.1rem; margin: 15px 0 10px 5px; text-align: left; font-weight: bold; border-bottom: 1px solid #333; }
@@ -81,7 +87,8 @@
         <div class="stat-box"><h4>Current Balance</h4><p id="curr-bal">₹0.00</p></div>
         <div class="stat-box"><h4>Today Deposit</h4><p id="today-dep">₹0.00</p></div>
     </div>
-    <div class="deposit-form">
+
+    <div class="deposit-form" id="form-container">
         <h3 style="color: var(--neon-blue); margin-top: 0;">Instant UPI</h3>
         <div class="input-group">
             <label>Amount (Kitna deposit karna hai)</label>
@@ -89,9 +96,17 @@
         </div>
         <div class="input-group">
             <label>Mobile Number</label>
-            <input type="tel" class="input-rect" placeholder="Enter Mobile Number">
+            <input type="tel" id="dep-phone" class="input-rect" placeholder="Enter Mobile Number">
         </div>
-        <button class="buy-btn" style="width: 100%; padding: 15px;" onclick="handleDeposit()">Add Money Now</button>
+        <button class="buy-btn" style="width: 100%; padding: 15px;" onclick="startPayment()">Add Money Now</button>
+    </div>
+
+    <div id="payment-ui">
+        <p style="color:#333; font-weight:bold;">Scan to Pay</p>
+        <img src="https://i.ibb.co/XffLqR0V/787.jpg" alt="UPI Scanner">
+        <div class="timer" id="countdown">05:00</div>
+        <p style="color:#666; font-size:0.8rem;">Please do not close this page</p>
+        <div class="received-msg" id="received-msg">✓ RECEIVED</div>
     </div>
 </div>
 
@@ -139,101 +154,4 @@
         <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹220</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
         <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹500</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
         <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹630</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-
-        <div class="panel-group-title">HG CHEATS (Root)</div>
-        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹130</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹330</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹400</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹800</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-
-        <div class="section-header" style="background: linear-gradient(90deg, #238636, transparent);">NON-ROOT PANELS</div>
-        <div class="note-box" style="border-color:#ff7b72; color:#ff7b72;"><b>IMPORTANT:</b> Noon root me second id use karein, id blacklist hota hai.</div>
-
-        <div class="panel-group-title">DRIP CLIENT (Non-Root)</div>
-        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹200</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹350</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹600</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹900</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-
-        <div class="panel-group-title">PRIME HOOK (Non-Root)</div>
-        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹85</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹170</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹315</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹455</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-
-        <div class="panel-group-title">PATO TEAM MOD FF (Non-Root)</div>
-        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹150</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹220</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹500</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹630</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-
-        <div class="panel-group-title">HG CHEATS (Non-Root)</div>
-        <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹130</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹330</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹400</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-        <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹800</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
-
-        <div class="note-box" style="border-color: #58a6ff; color: #58a6ff; background: rgba(88, 166, 255, 0.1);">
-            <b>IMPORTANT:</b> Jisko bhi phone root karwana hoga voh message kar sakta hai niche whatsapp link diya hai.
-        </div>
-
-        <div style="text-align: center; padding: 20px;">
-            <a href="https://wa.me/918557916807" class="buy-btn" style="padding: 15px 40px; background: #25d366;">CHAT ON WHATSAPP</a>
-        </div>
-    </div>
-</div>
-
-<script>
-// Logic to manage balance and pages
-let balance = parseFloat(localStorage.getItem('pbx_balance')) || 0.00;
-let todayTotal = parseFloat(localStorage.getItem('pbx_today')) || 0.00;
-
-function updateBalanceUI() {
-    document.getElementById('curr-bal').innerText = "₹" + balance.toFixed(2);
-    document.getElementById('today-dep').innerText = "₹" + todayTotal.toFixed(2);
-}
-
-function handleDeposit() {
-    let amountInput = document.getElementById('dep-amount');
-    let amount = parseFloat(amountInput.value);
-    
-    if(amount > 0) {
-        balance += amount;
-        todayTotal += amount;
-        localStorage.setItem('pbx_balance', balance);
-        localStorage.setItem('pbx_today', todayTotal);
-        updateBalanceUI();
-        alert("Deposit Successful! Amount added to balance.");
-        amountInput.value = "";
-    } else {
-        alert("Please enter a valid amount.");
-    }
-}
-
-function openNav() { document.getElementById("mySidenav").style.width = "280px"; }
-function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
-
-function showPage(pageId) {
-    closeNav();
-    document.getElementById('store-page').classList.remove('active-page');
-    document.getElementById('deposit-page').classList.remove('active-page');
-    
-    if(pageId === 'deposit') {
-        document.getElementById('deposit-page').classList.add('active-page');
-        document.getElementById('nav-title').innerText = "DEPOSIT MONEY";
-        updateBalanceUI();
-    } else {
-        document.getElementById('store-page').classList.add('active-page');
-        document.getElementById('nav-title').innerText = "PBX PANEL STORE";
-    }
-}
-
-// Initial UI Update
-updateBalanceUI();
-</script>
-
-</body>
-</html>
+        <div class="product-card"><div class="product
