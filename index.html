@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PBX PANEL | Premium Dashboard</title>
+    <title>PBX PANEL | Professional Store</title>
     <style>
         :root {
             --primary-bg: #0a0a0c;
@@ -14,6 +14,7 @@
         }
         body { font-family: 'Segoe UI', sans-serif; background-color: var(--primary-bg); color: var(--text-white); margin: 0; padding: 0; overflow-x: hidden; }
 
+        /* Sidebar Navigation */
         .sidenav {
             height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0;
             background-color: #0f0f12; overflow-x: hidden; transition: 0.4s; padding-top: 60px;
@@ -24,12 +25,15 @@
         .sidenav a:hover { color: var(--neon-blue); background: rgba(138, 43, 226, 0.1); }
         .closebtn { position: absolute; top: 10px; right: 20px; font-size: 36px; color: #fff; cursor: pointer; }
 
+        /* Header */
         header { background: var(--card-bg); padding: 15px; display: flex; align-items: center; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 99; }
         .menu-btn { font-size: 30px; cursor: pointer; color: var(--neon-purple); margin-right: 20px; display: block; }
 
+        /* Page System - Strictly Separate */
         .page { display: none; padding: 15px; text-align: center; width: 100%; box-sizing: border-box; }
         .active-page { display: block !important; }
 
+        /* UI Elements */
         .section-header { background: linear-gradient(90deg, var(--neon-purple), transparent); padding: 10px; border-radius: 8px; margin: 25px 0 10px; font-weight: bold; text-align: left; border-left: 4px solid white; text-transform: uppercase; }
         .panel-group-title { color: #ffa657; font-size: 1.1rem; margin: 15px 0 10px 5px; text-align: left; font-weight: bold; border-bottom: 1px solid #333; }
         .product-card { background: var(--card-bg); border: 1px solid #222; border-radius: 12px; padding: 12px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
@@ -111,10 +115,13 @@
     <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹100</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
     <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹200</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
     <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹350</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+    <div class="product-card"><div class="product-info"><h3>15 Days</h3><p>₹600</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
     <div class="product-card"><div class="product-info"><h3>31 Days</h3><p>₹900</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
 
     <div class="panel-group-title">PRIME HOOK (Non-Root)</div>
     <div class="product-card"><div class="product-info"><h3>1 Day</h3><p>₹85</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+    <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹170</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
+    <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹315</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
     <div class="product-card"><div class="product-info"><h3>10 Days</h3><p>₹455</p></div><a href="https://wa.me/918557916807" class="buy-btn">BUY</a></div>
 
     <div class="note-box" style="border-color: #58a6ff; color: #58a6ff; background: rgba(88, 166, 255, 0.1);">
@@ -158,7 +165,7 @@
     <div class="product-card"><div class="product-info"><h3>20 Days</h3><p>₹650</p></div></div>
     <div class="product-card"><div class="product-info"><h3>30 Days</h3><p>₹1000</p></div></div>
 
-    <div class="panel-group-title">STRICKS BR (ALPHA-X) (Root)</div>
+    <div class="panel-group-title">STRICKS BR (Root)</div>
     <div class="product-card"><div class="product-info"><h3>3 Days</h3><p>₹180</p></div></div>
     <div class="product-card"><div class="product-info"><h3>5 Days</h3><p>₹220</p></div></div>
     <div class="product-card"><div class="product-info"><h3>7 Days</h3><p>₹290</p></div></div>
@@ -196,18 +203,19 @@ function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
 
 function showPage(pageId) {
     closeNav();
-    // Hide all pages manually to avoid mixing
+    // Hide ALL pages first
     document.getElementById('store-page').style.display = 'none';
     document.getElementById('reseller-page').style.display = 'none';
     
-    // Show only the selected page
-    document.getElementById(pageId + '-page').style.display = 'block';
-    
+    // Show only the requested page
     if(pageId === 'reseller') {
+        document.getElementById('reseller-page').style.display = 'block';
         document.getElementById('nav-title').innerText = "PANEL RESELLER";
     } else {
+        document.getElementById('store-page').style.display = 'block';
         document.getElementById('nav-title').innerText = "PBX PANEL STORE";
     }
+    // Scroll to top automatically
     window.scrollTo(0,0);
 }
 </script>
